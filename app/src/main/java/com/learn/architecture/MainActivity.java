@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.learn.architecture.mvc.MVCActivity;
 import com.learn.architecture.mvp.MVPActivity;
 import com.learn.architecture.mvvm.MVVMActivity;
+import com.learn.architecture.mvvma.MVVMAActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     public void onMVVM(View view) {
         startActivity(MVVMActivity.getIntent(this));
     }
+
+    public void onMVVMAdv(View view) { startActivity(MVVMAActivity.getIntent(this)); }
 
 
 }

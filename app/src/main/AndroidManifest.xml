@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,17 +13,21 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".mvvma.MVVMAActivity"
+            android:exported="false"
+            android:label="Games list (MVVM Advanced)"/>
+        <activity
             android:name=".mvvm.MVVMActivity"
             android:exported="false"
-            android:label="Games list (MVVM)"/>
+            android:label="Games list (MVVM)" />
         <activity
             android:name=".mvp.MVPActivity"
             android:exported="false"
-            android:label="Games list (MVP)"/>
+            android:label="Games list (MVP)" />
         <activity
             android:name=".mvc.MVCActivity"
             android:exported="false"
-            android:label="Games list (MVC)"/>
+            android:label="Games list (MVC)" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
