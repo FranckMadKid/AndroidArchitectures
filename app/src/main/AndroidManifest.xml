@@ -13,9 +13,13 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".usecontext.UseCtxActivity"
+            android:exported="false"
+            android:label="Application context"/>
+        <activity
             android:name=".mvvma.MVVMAActivity"
             android:exported="false"
-            android:label="Games list (MVVM Advanced)"/>
+            android:label="Games list (MVVM Advanced)" />
         <activity
             android:name=".mvvm.MVVMActivity"
             android:exported="false"

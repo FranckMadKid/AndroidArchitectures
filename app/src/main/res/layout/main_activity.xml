@@ -49,9 +49,20 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:onClick="onMVVMAdv"
         android:text="MVVM Advanced"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mvvm"
-        android:onClick="onMVVMAdv"/>
+        app:layout_constraintTop_toBottomOf="@+id/mvvm" />
+
+    <Button
+        android:id="@+id/withctx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="onWithContext"
+        android:text="Application Context"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mvvma" />
 </androidx.constraintlayout.widget.ConstraintLayout>

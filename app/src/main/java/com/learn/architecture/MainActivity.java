@@ -9,6 +9,7 @@ import com.learn.architecture.mvc.MVCActivity;
 import com.learn.architecture.mvp.MVPActivity;
 import com.learn.architecture.mvvm.MVVMActivity;
 import com.learn.architecture.mvvma.MVVMAActivity;
+import com.learn.architecture.usecontext.UseCtxActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMVVMAdv(View view) { startActivity(MVVMAActivity.getIntent(this)); }
+
+    public void onWithContext(View view) { startActivity(UseCtxActivity.getIntent(this)); }
 
 
 }

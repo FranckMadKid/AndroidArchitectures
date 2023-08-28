@@ -25,10 +25,16 @@ android {
         dataBinding true
         viewBinding true
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
     implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
     def retrofitVersion= '2.9.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
