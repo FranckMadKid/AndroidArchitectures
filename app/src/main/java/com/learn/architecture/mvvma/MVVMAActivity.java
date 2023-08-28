@@ -2,12 +2,13 @@ package com.learn.architecture.mvvma;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.learn.architecture.R;
 import com.learn.architecture.databinding.ActivityMvvmaactivityBinding;
 import com.learn.architecture.model.Game;
 import com.learn.architecture.utils.UiUtils;
@@ -20,7 +21,7 @@ public class MVVMAActivity extends AppCompatActivity {
     private List<Game> gamesList = new ArrayList<>();
     private GameAdapter adapter;
 
-    private GamesViewModelAdv viewModel;
+    private GamesViewModelAdv viewmodel;
 
     private ActivityMvvmaactivityBinding binding;
 
@@ -34,17 +35,18 @@ public class MVVMAActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMvvmaactivityBinding.inflate(getLayoutInflater()):
+        binding = ActivityMvvmaactivityBinding.inflate(getLayoutInflater());
 
-        viewModel =  new ViewModelProvider(this).get(GamesViewModelAdv.class);
+        viewmodel =  new ViewModelProvider(this).get(GamesViewModelAdv.class);
         adapter = new GameAdapter(this, gamesList);
 
-        binding.setViewModel(viewModel);
+        binding.setViewModel(viewmodel);
         binding.setLifecycleOwner(this);
         binding.executePendingBindings();
         setContentView(binding.getRoot());
 
         binding.gamesRL.setAdapter(adapter);
+        binding.gamesRL.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         observeViewModel();
     }
