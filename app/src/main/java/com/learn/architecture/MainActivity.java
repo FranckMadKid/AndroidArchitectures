@@ -11,6 +11,7 @@ import com.learn.architecture.mvp.MVPActivity;
 import com.learn.architecture.mvvm.MVVMActivity;
 import com.learn.architecture.mvvma.MVVMAActivity;
 import com.learn.architecture.usecontext.UseCtxActivity;
+import com.learn.architecture.viewmodelstate.SaveStateActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,11 +34,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(MVVMActivity.getIntent(this));
     }
 
-    public void onMVVMAdv(View view) { startActivity(MVVMAActivity.getIntent(this)); }
-
     public void onShareData(View view) { startActivity(ShareDataActivity.getIntent(this));}
 
     public void onWithContext(View view) { startActivity(UseCtxActivity.getIntent(this)); }
 
+    public void onSaveState(View view) { startActivity(SaveStateActivity.getIntent(this));}
+
+    public void onMVVMAdv(View view) { startActivity(MVVMAActivity.getIntent(this)); }
 
 }

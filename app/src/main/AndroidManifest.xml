@@ -13,8 +13,13 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".viewmodelstate.SaveStateActivity"
+            android:exported="false"
+            android:label="Save state"/>
+        <activity
             android:name=".datasharing.ShareDataActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Sharing data"/>
         <activity
             android:name=".usecontext.UseCtxActivity"
             android:exported="false"
