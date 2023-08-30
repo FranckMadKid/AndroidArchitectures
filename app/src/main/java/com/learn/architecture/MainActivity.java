@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.learn.architecture.datasharing.ShareDataActivity;
 import com.learn.architecture.mvc.MVCActivity;
 import com.learn.architecture.mvp.MVPActivity;
 import com.learn.architecture.mvvm.MVVMActivity;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onMVVMAdv(View view) { startActivity(MVVMAActivity.getIntent(this)); }
+
+    public void onShareData(View view) { startActivity(ShareDataActivity.getIntent(this));}
 
     public void onWithContext(View view) { startActivity(UseCtxActivity.getIntent(this)); }
 
