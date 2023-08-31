@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 
 import com.learn.architecture.databinding.ActivityMvvmaactivityBinding;
 import com.learn.architecture.model.Game;
@@ -48,9 +50,29 @@ public class MVVMAActivity extends AppCompatActivity {
         binding.gamesRL.setAdapter(adapter);
         binding.gamesRL.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
+        initUi();
+
         observeViewModel();
     }
 
+
+    private void initUi() {
+        binding.searchED.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                viewmodel.onSearchQuery(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+    }
 
     private void observeViewModel() {
         viewmodel.getGamesList().observe(this,

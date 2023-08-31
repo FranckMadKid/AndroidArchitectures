@@ -1,6 +1,8 @@
 package com.learn.architecture.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.Retrofit;
@@ -13,6 +15,8 @@ public class GamesService {
 
     private GameApi api;
 
+    private ArrayList<Game> allGames = new ArrayList<>();
+
     public GamesService() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -22,5 +26,14 @@ public class GamesService {
         api = retrofit.create(GameApi.class);
     }
 
-    public Single<List<Game>> getGames() { return api.getGames(); }
+    public Single<List<Game>> getGames() {
+        Single<List<Game>> allGames = api.getGames();
+        this.allGames.clear();
+        this.allGames.addAll(allGames.blockingGet());
+        return allGames;
+    }
+
+    public List<Game> filterGames(String queryString) {
+        return allGames.stream().filter(game -> game.title.toLowerCase().contains(queryString)).collect(Collectors.toList());
+    }
 }
